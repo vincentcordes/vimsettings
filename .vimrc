@@ -60,9 +60,14 @@ set noerrorbells
 set title
 
 " Automatically re-read files if unmodified inside vim
-se autoread
+set autoread
 
 " Enable spellchecking
 " set spell
 
+" Turn off visual bell
+set novisualbell
 
+" Key map to move lines up and down without copy and paste
+vnoremap J :m '>+1<CR>gv=gv
+vnoremap K :m '<-2<CR>gv=gv
