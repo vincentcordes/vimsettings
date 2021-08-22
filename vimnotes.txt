@@ -1,0 +1,80 @@
+NOTES TO USE THE VIM EDITOR MOAR BETTAR!
+
+
+use v to enter visual mode and highlight text
+this can then be used to delete copy etc
+
+---- COOL TRICK ----
+use visual mode 'v' to highlight text
+then save in command mode with :w 'filename'
+
+start typing a command ex :e
+press ctrl+d to display a list of all commands beginning with e
+
+
+NAVIGATION:
+1) hjkl - left down up right
+2) w & b - jump by word
+3) ctrl+w - switch between open windows
+4) $ - jumps to end of line
+5) 0 - jumps to beginning of line
+6) ci ' or " - removes text between first matching set of quotes enters insert mode
+
+COMMANDS:
+1) split - splits a window horizontally
+2) vsplit - splits a window vertically
+3) quit - quits the current window
+4) substitute s/old/new - replaces only first occurance
+   	      s/old/new/g - replaces each occurance on line
+              visual highlightd s/old/new/g - replaces all highlighted
+5) r 'filename' - pastes file contents into file on starting at current line
+
+
+
+MULTILINE SELECTION
+In windows terminal the keybinding is overwritten by default.
+Comment out the copy and paste keybindings in the Windows Terminal settings.json file
+In vim use ctrl+v to enter visual mode with column selection
+Use I (shift + i) to enter insert mode
+The cursor will jump to the first line in the selection
+Enter the desired characters then press escape to update all of the selected lines
+
+---- COOL TRICK ----
+to auto generate x lines sequential numbers (1, 2, 3, 4, 5)
+Enter the number to start
+Copy the line
+use x p to paste the number in the next x lines
+move to the second line
+enter visual mode
+select the range using x-1 j
+press g
+press crtl + a
+
+MACROS
+enter q and a key to start recording a macro
+enter sequence of commands
+press q to stop recording
+press @+key to run a macro
+
+CURRENT MACROS
+@r => !node current file (runs the current file in node)
+@q => inserts single quotes around a word 
+
+REGISTERS
+list registers with :registers
+it is possible to use "<register-name>yank or delete to grab text and assign it to a register
+using "<register-name>p will paste the register at the current cursor location
+ex: "add - yes that is a command, will delete the current line and add it to register a
+ex: "ap - will paste that line at the cursor location
+
+MARKS
+list marks with :marks
+to create a mark use m<mark-name>
+ex: ma - will create a mark at the current location
+to naviagate to a mark use `<mark-name> or '<mark-name>
+`will place the cursor on the line at the position of the mark
+'will place the cursor at the beginning of the line
+Global marks can be set using capital letters
+ex: 'G will place the cursor at beginning of the line of whatever file happens to have that mark.
+Navigating to a mark in a file that is not open will open the file
+
